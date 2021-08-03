@@ -217,7 +217,35 @@
 \section{稳度}
 各种建筑物，工厂的烟囱，桌子、椅子、柜橱等家具，都是有支面的物体，有支面物体的平衡是稳定平衡，这是因为物体稍微偏离平衡位置，它的重心总要升高，重力的作用线还会通过支面，重力对作为转动轴的$O$轴的力矩将使物体回到原来的位置，恢复平衡，只有偏离平衡位置大一些，重力的作用线不再通过支面，重力的力矩才会使物体继续远离原来的位置而倾倒（图6.18）．
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-18.png}
+\centering\begin{tikzpicture}[>=latex, scale=1.4]
+    \fill [pattern=north east lines](-2,-.25) rectangle (1,0);
+    \draw (-2,0)--(1,0);
+\draw [dashed] (0,0)--(-1,0)--(-1,1)--(0,1)--(0,0);
+\draw[rotate=-30] (0,0)--(-1,0)--(-1,1)--(0,1)--(0,0);
+\draw[fill=black] (-.5, 1/2) circle (1pt); 
+\draw[fill=black,rotate=-30] (-.5, 1/2) circle (1pt); 
+\draw[->] (0,1.5) arc (90:110: 1.5);
+
+\node at (-.5, 1/2)[above]{$C$};
+\node at (0, 1/2+.1)[above]{$C$};
+\node at (-.5,-.5){甲};
+
+\end{tikzpicture}
+\qquad 
+\begin{tikzpicture}[>=latex, scale=1.4]
+    \fill [pattern=north east lines](-2,-.25) rectangle (1,0);
+    \draw (-2,0)--(1,0);
+\draw [dashed] (0,0)--(-1,0)--(-1,1)--(0,1)--(0,0);
+\draw[rotate=-60] (0,0)--(-1,0)--(-1,1)--(0,1)--(0,0);
+\draw[fill=black] (-.5, 1/2) circle (1pt); 
+\draw[fill=black,rotate=-60] (-.5, 1/2) circle (1pt); 
+\draw[->] (0,1.5) arc (90:70: 1.5);
+
+\node at (-.5, 1/2)[above]{$C$};
+\node at (0.35, 1/2+.1)[above]{$C$};
+\node at (-.5,-.5){乙};
+
+\end{tikzpicture}
 \caption{有支面的物体的平衡}
 \end{figure}
 
@@ -226,14 +254,60 @@
 稳定程度的大小通常用\textbf{稳度}来表示，稳度的大小跟物体重心的高低和支面的大小都有关系．
 
 拿两个支面大小相同而重心高度不同的长方体来，如果使它们倾斜某一相同的角度（图6.19），可以看到：重心低的长方体的重力作用线可以仍旧通过支面，而重心高的长方体的重力作用线不再通过支面．可见，物体的重心越低，稳度越大．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-19.png}
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex]
+    \fill [pattern=north east lines](-2,-.25) rectangle (1,0);
+    \draw (-2,0)--(1,0);
+\draw [dashed] (0,0)--(-1,0)--(-1,1.5)--(0,1.5)--(0,0);
+\draw[rotate=-30] (0,0)--(-1,0)--(-1,1.5)--(0,1.5)--(0,0);
+\draw[fill=black] (-.5, 1.5/2) circle (1pt); 
+\draw[fill=black,rotate=-30] (-.5, 1.5/2) circle (1pt); 
+\draw [->, thick, rotate=-30](-.5, 1.5/2)--+(-60:1.6);
+\draw[->] (0,2) arc (90:110: 2);
+\node at (-.5, 1.5/2)[above]{$C$};
+\node at (0, 1.5/2+.1)[above]{$C$};
+\end{tikzpicture}\qquad 
+\begin{tikzpicture}[>=latex]
+    \fill [pattern=north east lines](-2,-.25) rectangle (1,0);
+    \draw (-2,0)--(1,0);
+\draw [dashed] (0,0)--(-1,0)--(-1,2.5)--(0,2.5)--(0,0);
+\draw[rotate=-30] (0,0)--(-1,0)--(-1,2.5)--(0,2.5)--(0,0);
+\draw[fill=black] (-.5, 2.5/2) circle (1pt); 
+\draw[fill=black,rotate=-30] (-.5, 2.5/2) circle (1pt); 
+\draw [->, thick, rotate=-30](-.5, 2.5/2)--+(-60:2);
+\draw[->] (0,3) arc (90:70: 3);
+\node at (-.5, 2.5/2)[above]{$C$};
+\node at (0.2, 2.5/2+.1)[above]{$C$};
+\end{tikzpicture}
 \caption{重心越低，稳度越大}
 \end{figure}
 
 再拿两个重心高度相同而支面大小不同的长方体来．如果使它们倾斜某一相同的角度（图6.20），可以看到：支面大的长方体的重力作用线可以仍旧通过支面，而支面小的长方体的重力作用线不再通过支面．可见，物体的支面越大，稳度越大．
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-20.png}
+\centering    \begin{tikzpicture}[>=latex]
+        \fill [pattern=north east lines](-2,-.25) rectangle (1,0);
+        \draw (-2,0)--(1,0);
+    \draw [dashed] (0,0)--(-1,0)--(-1,2)--(0,2)--(0,0);
+    \draw[rotate=-30] (0,0)--(-1,0)--(-1,2)--(0,2)--(0,0);
+    \draw[fill=black] (-.5, 2/2) circle (1pt); 
+    \draw[fill=black,rotate=-30] (-.5, 2/2) circle (1pt); 
+    \draw [->, thick, rotate=-30](-.5, 2/2)--+(-60:1.5);
+    \draw[->] (0,2.5) arc (90:70: 3);
+    \node at (-.5, 2/2)[above]{$C$};
+    \node at (0.2, 2/2+.1)[above]{$C$};
+    \end{tikzpicture}\qquad 
+    \begin{tikzpicture}[>=latex]
+        \fill [pattern=north east lines](-4,-.25) rectangle (2,0);
+        \draw (-4,0)--(2,0);
+    \draw [dashed] (0,0)--(-3,0)--(-3,2)--(0,2)--(0,0);
+    \draw[rotate=-30] (0,0)--(-3,0)--(-3,2)--(0,2)--(0,0);
+    \draw[fill=black] (-1.5, 2/2) circle (1pt); 
+    \draw[fill=black,rotate=-30] (-1.5, 2/2) circle (1pt); 
+    \draw [->, thick, rotate=-30](-1.5, 2/2)--+(-60:2);
+    \draw[->] (0,3) arc (70:90: 3);
+    \node at (-1.5, 2/2)[above]{$C$};
+    \node at (-.7, 2/2+.6)[above]{$C$};
+    \end{tikzpicture}
 \caption{支面越大，稳度越大}
 \end{figure}
 
@@ -298,22 +372,64 @@ F_2&=\frac{\sin 120^{\circ}}{\sin 30^{\circ}}F=8.5\times 10^3 {\rm N}
 \end{solution}
 
 \item 图6.23中的$AC$和$BC$是固定在电线杆上的铁棍，$AC$长0.9米，$BC$长1.2米，$AB$之间的距离是0.6米，在$C$处挂一盏重20牛的街灯，求$AC$对街灯的拉力和$BC$对街灯的支持力．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-23.png}
-\caption{}
-\end{figure}
+
 \item 图6.24中的$BO$是一根横梁，一端安在轴$B$上，另一端用钢绳$AO$拉着，在$O$点挂一个重物，重量是240牛．横
 梁是均匀的，它本身的重量是80牛．求钢绳的拉力．
+
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-24.png}
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=1]
+    \fill [pattern=north east lines](-2.2,-2) rectangle (-2,2);
+    \draw (-2,2)--(-2,-2);
+    
+\draw (-2+0.8714*5, .5+.225*5)--(-2+0.8714*5, 1);
+\draw (-2+0.8714*5-.3, .7) arc (180:0:.3);
+\draw (-2+0.8714*5-.3, .7)--(-2+0.8714*5+.3, .7);
+\draw (-2+0.8714*5-.1, .7) arc (180:360:.1);
+\node at (-1.8,1.8){$A$};
+
+\pgfsetlinewidth{2pt}
+    \pgfsetinnerlinewidth{1pt}
+    \draw (-2,1.5)--(-2+0.8714*5, .5+.225*5)node[right]{$C$};
+    \draw (-2,-1.5)node[right]{$B$}--(-2+0.8714*5, .5+.225*5);
+\end{tikzpicture}
 \caption{}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=1.1]
+    \fill [pattern=north east lines](-2.2,-2) rectangle (-2,2);
+\draw (-2,2)--(-2,-2);
+
+\draw (-2,-0.1)rectangle (1,0);
+\draw (1,0) node[right]{$O$}--(-2,1.732);
+\draw[->, thick](1,0)--(-.5, 1.732/2)node[above]{$T$};
+\draw (1,0)--(1,-1.5);
+\draw[->, thick] (1,0)--(1,-1.1) node [right]{$F$};
+
+\draw [fill=gray](1-.2,-1.5-.4) rectangle (1+.2, -1.5);
+
+\draw[<->] (-2,-.8) -- node[fill=white]{$\ell$} (1,-.8);
+\draw [->] (-.5, -.1)--(-.5,-.5)node[right]{$G$};
+
+\node at (-2.1,1.732) [left]{$A$};
+\node at (-2.1,0) [left]{$B$};
+\draw (.75,0) arc (180:150:.25)node[left]{$\theta = 30^{\circ}$};
+
+\end{tikzpicture}
+\caption{}
+\end{minipage}
 \end{figure}
+
+
+
 \begin{solution}
-    取横梁$BO$作为研究对象，横梁的一端安在轴$B$上，是一个有固定转动轴的物体．力$F$的力矩是$Fl$，力$T$的力矩是$Tl\sin\theta$，自重$G$的力矩是$Gl/2$．应用有固定转动轴物体的平衡条件得到：
-\[\begin{split}
-    Tl\sin\theta -G\frac{l}{2}-Fl&=0,\\
-T&= \frac{G+2F}{2\sin\theta }=560{\rm N}
-\end{split} \]
+    取横梁$BO$作为研究对象，横梁的一端安在轴$B$上，是一个有固定转动轴的物体．力$F$的力矩是$F\ell$，力$T$的力矩是$T\ell\sin\theta$，自重$G$的力矩是$G\ell/2$．应用有固定转动轴物体的平衡条件得到：
+\[    T\ell\sin\theta -G\frac{\ell}{2}-F\ell=0,\]
+\[T= \frac{G+2F}{2\sin\theta }=560{\rm N}\]
+
 
 在这个题里，如果把力$F$沿$AO$和$OB$方向分解来求钢绳
 的拉力，就会得到错误的结果．因为对钢绳的拉力$T$不仅跟物体的重量有关，而且跟横梁的自重有关．这时力$F$在$AO$方
@@ -324,7 +440,7 @@ T&= \frac{G+2F}{2\sin\theta }=560{\rm N}
 \item 放在斜面上的一个物体，当斜面倾角为$\theta$时，它沿着斜面匀速下滑．试证明物体和斜面之间的滑动摩擦系数$\mu=\tan \theta$．
 \item 如果天平的两臂并不完全相等，可以采取所谓复称法求得物体的真实质量$m$．先把物体放在左盘，砝码放在右盘，天平平衡时砝码的质量是$m_1$．然后把物体放在右盘，砝码放在左盘，天平平衡时砝码的质量是$m_2$．试证明物体的真实质量$m=\sqrt{m_1m_2}$．
 \item 无风的时候竖直下落的雨滴受到两个力的作用：重力、空气阻力．设空气阻力$f$与雨滴下落的速度$v$成正比，即$f=kv$．开始下落时雨滴的速度较小，空气阻力也较小，雨滴加速下落，速度随来越大．随着速度的增大，空气阻力也增大，当空气阻力增大到与重力平衡时，雨滴就以一定的速度匀速下落．这个速度叫做极限速度或收尾速度，设雨滴的质量为$m$，试证明雨滴的极限速度$v=mg/k$．
-\item 降落命由于受到水平方向的风力而沿着跟竖直方向成30$^\circ$角的方向匀速下降，降落伞和人共重700牛，求降落伞所受的空气的限力．
+\item 降落命由于受到水平方向的风力而沿着跟竖直方向成30$^\circ$角的方向匀速下降，降落伞和人共重700牛，求降落伞所受的空气的阻力．
 \item 图6.25是一台起重机的示意图，机身和平衡体的重量$G_1=4.2\times 10^5$牛，起重杆的重量$G_2=2.0\times 10^4$牛，其他数据如图中所示．起重机至多能提起多重的货物．
 \begin{figure}[htp]
 \centering\includegraphics[scale=.8]{fig/6-25.png}

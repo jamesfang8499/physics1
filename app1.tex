@@ -496,7 +496,21 @@ $s_1,s_2,s_3,s_4$．再用实验七的方法分别算出打点计时器在打$B,
 （图10.20），利用这种装置可
 以测出弹丸的速度．
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/10-20.png}
+\begin{tikzpicture}[>=latex, scale=1.5]
+        \fill [pattern=north east lines](-.5,0) rectangle (.5,0.25);
+        \draw (-.5,0)--(.5,0);
+\draw [rotate=30, dashed] (-.35, -3.5) rectangle (.35, -3);
+\draw  (-.35, -3.5) rectangle (.35, -3);
+\draw (0,0)--(-90:3);\draw[dashed] (0,0)--(-60:3);
+
+\draw[fill=gray] (-2+1, 5.3-8.5) --(-1.7+1, 5.3-8.5) to [bend left=15] (-1.45+1, 5.2-8.5) to [bend left=15] (-1.7+1,5.1-8.5)--(-2+1,5.1-8.5)--(-2+1,5.3-8.5); 
+
+\draw[rotate=30, fill=gray] (-2+1.7, 5.3-8.5) --(-1.7+1.7, 5.3-8.5) to [bend left=15] (-1.45+1.7, 5.2-8.5) to [bend left=15] (-1.7+1.7,5.1-8.5)--(-2+1.7,5.1-8.5)--(-2+1.7,5.3-8.5); 
+
+\draw [dashed](0,-3.25)--(3,-3.25);
+\draw [dashed](1.7,-2.8)--(3,-2.8);
+\draw[<->](2.3,-3.25)--node[right]{$h$}(2.3,-2.8);
+    \end{tikzpicture}
     \caption{}
     \end{figure}
 
