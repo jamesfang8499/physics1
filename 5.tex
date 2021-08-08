@@ -290,7 +290,18 @@ M&= \frac{4\times 3.14^2\times (1.49\times 10^{11})^2}{6.67\times 10^{-11}\times
 	\item 图5.8 $A$、$B$、$C$是在地球大气层外圆形轨道上运行的三颗人造卫星，$A$、$B$的质量相同，它们的轨道速率是否也相同？$B$、$C$的质量不同，它们的轨道速率是否也不同？
 
 \begin{figure}[htp]
-\centering\includegraphics[scale=1]{fig/5-8.png}
+\centering\begin{tikzpicture}[>=latex]
+\draw (0,0) circle (15pt);
+\node at (0,0){地球};
+\draw (0,1.5) arc (90:15:1.5);
+\draw (0,3) arc (90:15:3);
+\draw [<-](0,2.2) arc (90:70:2.2);
+\node at (0,2.2)[left]{卫星运行方向};
+\draw[fill=white] (60:1.5) circle (2pt) node[above]{$A$};
+\draw[fill=white] (75:3) circle (2pt) node[above]{$B$};
+\draw[fill=white] (40:3) circle (5pt);
+\node at  (40:3.2) [right]{$C$};
+\end{tikzpicture}
 \caption{}
 \end{figure}
 
