@@ -207,7 +207,43 @@
 上面讨论了有支点的物体的平衡，这对有支轴的物体的平衡也是正确的．图6.17表示有支轴的物体的三种平衡情况．在这三种情况中重力的作用线都通过支轴，力矩为零，物体都处于平衡位置．在第一种情形里，物体的重心在支轴的正下方，物体稍微偏离平衡位置之后，重心升高，重力的力矩将使物体回到原来的位置，恢复平衡，因而属于稳定平衡．在第二种情形里，物体的重心在支轴的正上方，稍微偏离平衡位置之后，重心降低，重力的力矩将使物体继续远离原来的位置而不能恢复平衡，这种平衡也很难实现，属于不稳平衡．在第三种情形里，物体的重心就在支轴上，物体偏离原来的位置
 之后，重心的高度不变，重力的力矩仍旧为零，物体在任何位置都能平衡，因而属于随遇平衡．
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-17.png}
+\centering
+\begin{tikzpicture}[>=latex]\centering
+\begin{scope}
+\draw[dashdotted] (-2,0)--(1,0);
+\draw (-.4,.5) rectangle (.4, -2.5);
+\draw[rotate=-45, dashed] (-.4,.5) rectangle (.4, -2.5);
+\draw [fill=black](0,0)  circle (1.5pt) node [below]{$O$};
+\draw [fill=black](0,-1)  circle (1.5pt) node [right]{$C$};
+\draw [fill=black](-135:1)  circle (1.5pt) node [left]{$C$};
+\draw[->] (0,-1)--(0,-2)node [below]{$G$};
+\draw[->] (-135:1)--+(0,-1)node [below]{$G$};
+\end{scope}
+
+\begin{scope}[xshift=2cm]
+    \draw[dashdotted] (-1,0)--(2,0);
+    \draw (-.4,-.5) rectangle (.4, 2.5);
+    \draw[rotate=-45, dashed] (-.4,-.5) rectangle (.4, 2.5);
+    \draw [fill=black](0,0)  circle (1.5pt) node [below]{$O$};
+    \draw [fill=black](0,1)  circle (1.5pt) node [left]{$C$};
+    \draw [fill=black](45:1)  circle (1.5pt) node [right]{$C$};
+    \draw[->] (0,1)--(0,.2)node [left]{$G$};
+    \draw[->] (45:1)--+(0,-.8)node [right]{$G$};
+
+\end{scope}
+
+\begin{scope}[xshift=6cm]
+    \draw[dashdotted] (-2,0)--(2,0);
+    \draw (-.4,-1.5) rectangle (.4, 1.5);
+    \draw[rotate=-45, dashed] (-.4,-1.5) rectangle (.4, 1.5);
+    \draw [fill=black](0,0)  circle (1.5pt) node [above]{$O$};
+    \draw [fill=black](0,0)  circle (1.5pt) node [right]{$C$};
+    \draw[->]  (0,0)--(0,-1)   node [below]{$G$};
+
+
+\end{scope}
+
+\end{tikzpicture}
 \caption{有支轴的物体的平衡}
 \end{figure}
 
@@ -349,8 +385,22 @@
 \section*{习题}
 \begin{enumerate}
     \item 图6.22表示一种简易起重机，$OA$是钢绳，跟水平方向成30$^\circ$角，$OB$是撑杆，跟水平方向成60$^\circ$角，提起的货物重$5.0\times 10^3$牛．求钢绳对货物的拉力和撑杆对货物的支持力．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-22.png}
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex, scale=1.5]
+    \draw (-1,0)--(5,0);
+    \draw [ thick](0,0)node[below]{$A$}--(30: 4)node[right]{$O$};
+    \draw [ thick](30:4)--(2*1.732-2/1.732,0)node[below]{$B$};
+\draw [very thick, ->] (30:4)--(2*1.732, 2-.75)node[right]{$F$};
+\draw [very thick, ->] (30:4)--(2*1.732, 2+.75)node[above]{$F'$};
+\draw [very thick, ->] (30:4)--(30:4-.75)node[left]{$F_1$};
+\draw [dashed] (30:4-.75)--(2*1.732, 2+.75);
+\draw (.25,0) arc (0:30:.25) node[right]{$30^{\circ}$};
+\draw (2*1.732-2/1.732+.25,0) arc (0:60:.25) node[right]{$60^{\circ}$};
+\draw [very thick, ->] (30:4)--(2*1.732+0.375*1.732, 2+.75*1.5)node[right]{$F_2$};
+\draw [dashed] (2*1.732, 2+.75)--(2*1.732+0.375*1.732, 2+.75*1.5);
+\draw  (30:4)--(2*1.732, 2-1);
+\draw [shade] (2*1.732-.25, 1-.5) rectangle (2*1.732+.25, 1);
+\end{tikzpicture}
 \caption{}
 \end{figure}
 

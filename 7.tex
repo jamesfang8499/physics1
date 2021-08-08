@@ -564,14 +564,62 @@ W_G&= mg\Delta h_1+mg\Delta h_2+mg\Delta h_3+\cdots\\
 
 弹性势能和弹力做功密切相关，它们的关系类似于重力势能和重力做功的关系，下面以弹簧为例定性地加以说明．
 
-\begin{figure}[htp]
-\centering\includegraphics[scale=1]{fig/7-18.png}
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex]
+    \tikzstyle{spring1}=[decorate,decoration={aspect=0.5, segment length=3mm, amplitude=3mm,coil}]
+    \tikzstyle{spring2}=[decorate,decoration={aspect=0.5, segment length=2mm, amplitude=3mm,coil}]
+    \tikzstyle{spring3}=[decorate,decoration={aspect=0.5, segment length=4mm, amplitude=3mm,coil}]
+    
+    \fill [pattern = north east lines] (-.25,2) rectangle (0,3);
+    \fill [pattern = north east lines] (-.25,0) rectangle (0,1);
+    \fill [pattern = north east lines] (-.25,-1) rectangle (0,-2);
+    
+    \draw(0,2)--(0,3);  \draw(0,0)--(0,1);  \draw(0,-1)--(0,-2); 
+
+    \draw [shade] (4, 2.25) rectangle (4.5, 2.75);
+    \draw [shade] (3,.25) rectangle  (3.5, .75);
+    \draw [shade] (5,-1.75) rectangle  (5.5, -1.25);
+
+    \draw [spring1](0,2.5)--(4,2.5);
+    \draw [spring2](0,.5)--(3,.5);
+    \draw [spring3](0,-1.5)--(5,-1.5);
+
+ \draw[fill=black] (6.5/2,.5) circle (1.5pt);  \draw [fill=black] (10.5/2,-1.5) circle (1.5pt);
+\draw [<->, thick]  (6.5/2+.8,.5)node[right]{$f$}-- (6.5/2-1.1,.5)node[above]{$F$};
+\draw [<->, thick]  (10.5/2+1,-1.5)node[right]{$F$}-- (10.5/2-.8,-1.5)node[above]{$f$};
+\draw [->] (6.2/2+.3, 1.1)--(6.5/2-.3, 1.1);
+\draw [->] (10.5/2-.3, -1.1)--(10.5/2+.3,-1.1);
+\end{tikzpicture}
 \caption{克服弹力做功，弹簧的弹性势能增加。图中$F$表示外力，$f$表示弹力。上图是没有发生形变的弹簧}
 \end{figure}
 用外力压缩或伸长弹簧的时候（图7.18），外力要克服弹
 力做功，克服弹力做多少功，弹簧的弹性势能就增加多少，把被压缩或伸长的弹簧放开的时候（图7.19），弹力可以推动其他物体做功，弹力做多少功，弹簧的弹性势能就减少多少．
-\begin{figure}[htp]
-\centering\includegraphics[scale=1]{fig/7-19.png}
+\begin{figure}[htp]\centering
+\begin{tikzpicture}[>=latex]
+    \tikzstyle{spring1}=[decorate,decoration={aspect=0.5, segment length=3mm, amplitude=3mm,coil}]
+    \tikzstyle{spring2}=[decorate,decoration={aspect=0.5, segment length=2mm, amplitude=3mm,coil}]
+    \tikzstyle{spring3}=[decorate,decoration={aspect=0.5, segment length=4mm, amplitude=3mm,coil}]
+    
+    \fill [pattern = north east lines] (-.25,2) rectangle (0,3);
+    \fill [pattern = north east lines] (-.25,0) rectangle (0,1);
+    \fill [pattern = north east lines] (-.25,-1) rectangle (0,-2);
+    
+    \draw(0,2)--(0,3);  \draw(0,0)--(0,1);  \draw(0,-1)--(0,-2); 
+
+    \draw [shade] (4, 2.25) rectangle (4.5, 2.75);
+    \draw [shade] (3,.25) rectangle  (3.5, .75);
+    \draw [shade] (5,-1.75) rectangle  (5.5, -1.25);
+
+    \draw [spring1](0,2.5)--(4,2.5);
+    \draw [spring2](0,.5)--(3,.5);
+    \draw [spring3](0,-1.5)--(5,-1.5);
+
+ \draw[fill=black] (6.5/2,.5) circle (1.5pt);  \draw [fill=black] (10.5/2,-1.5) circle (1.5pt);
+\draw [<-, thick]  (6.5/2+.8,.5)node[right]{$f$}-- (6.5/2,.5);
+\draw [->, thick]  (10.5/2,-1.5)-- (10.5/2-.8,-1.5)node[above]{$f'$};
+\draw [<-] (6.2/2+.3, 1.1)--(6.5/2-.3, 1.1);
+\draw [<-] (10.5/2-.3, -1.1)--(10.5/2+.3,-1.1);
+\end{tikzpicture}
 \caption{弹力做功，弹簧的弹性势能减少。图中$f$表示弹力。上图是没有发生形变的弹簧}
 \end{figure}
 
@@ -650,7 +698,33 @@ W_G&= mg\Delta h_1+mg\Delta h_2+mg\Delta h_3+\cdots\\
     \item  做下面的实验，把物体拴在细线上悬挂起来，做成
     一个单摆（图7.22）．把物体从平衡位置$O$拉到$B$，放手后观察物体的来回摆动，把铅笔放在位置1和2，可以看到物体仍然要升到跟$B$同样高的$C_1$和$C_2$．解释这个现象．
 \begin{figure}[htp]
-\centering\includegraphics[scale=1]{fig/7-22.png}
+\centering
+\begin{tikzpicture}[>=latex]
+    \fill [pattern = north east lines] (-.5,0) rectangle (.5,0.2);
+\draw (-.5,0)--(.5,0);
+    \draw (0,0)--(0,-4);
+    \draw (0,-.5) arc (-90:-45:.5)node[below]{$\theta$};
+    \draw [dashed] (0,0)--(-45:4)--(-135:4)--(0,0);
+    \draw[dashed] (0,-4) arc (-90:-45:4);
+    \draw[dashed] (0,-4) arc (-90:-135:4);
+
+    \draw[dashed] (0,-1) --(-2.2,-4/1.414);
+\draw[dashed] (0,-2) --(-1.5,-4/1.414);
+\draw[dashed] (-2.2,-4/1.414) to [bend right=25] (0,-4);
+\draw[dashed] (-1.6,-4/1.414) to [bend right=30] (0,-4);
+
+\draw[fill=black] (0,-1) circle (1.5pt)node[right]{1};
+\draw[fill=black] (0,-2) circle (1.5pt)node[right]{2};
+
+\draw [fill=white] (-45:4) circle (3pt)node[below]{$B$};
+\draw [fill=white] (-135:4) circle (3pt)node[above]{$C$};
+\draw [fill=white] (0,-4) circle (3pt)node[below]{$O$};
+\draw [fill=white] (-2.2,-4/1.414) circle (3pt)node[above]{$C_1$};
+\draw [fill=white] (-1.6,-4/1.414) circle (3pt)node[above]{$C_2$};
+
+\draw [|<->|](.18,.18) to node [fill=white]{$\ell$} (2*1.414+.18, -2*1.414+.18) ;
+
+\end{tikzpicture}
 \caption{}
 \end{figure}
 \end{enumerate}
@@ -700,7 +774,7 @@ W_G&= mg\Delta h_1+mg\Delta h_2+mg\Delta h_3+\cdots\\
 \end{split}\]
 \end{solution}
 
-我们否到，由于机械能守恒定律只涉及开始状态和终了状态的机械能，不涉及中间运动过程的细节，因此用它来处理问题相当简便．
+我们看到，由于机械能守恒定律只涉及开始状态和终了状态的机械能，不涉及中间运动过程的细节，因此用它来处理问题相当简便．
 
 当然，有的问题只用机械能守恒定律还不能完全解决．例如要想求单摆在最低位置时悬线的拉力$F$，就还需要应用圆周运动的知识，应用机械能守恒定律求出速度$v$之后，我们不难求出悬线的拉力：
 \[F=mg+\frac{mv^2}{\ell}=mg-2mg (1-\cos\theta)\]
