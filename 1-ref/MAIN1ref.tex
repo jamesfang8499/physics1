@@ -1,0 +1,198 @@
+\documentclass[a4paper, openany]{ctexbook}
+
+%\usepackage{anysize}
+%\papersize{26cm}{18.5cm}
+%\marginsize{2.25cm}{2.25cm}{2cm}{2cm}
+\usepackage[margin=3cm]{geometry}
+
+
+% 修改脚注的编号为加圈样式，并且各页单独编号
+
+\usepackage{pifont}
+\usepackage[perpage,symbol*]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}
+
+
+
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{graphicx}
+
+\usepackage[font=bf,labelfont=bf,labelsep=quad]{caption}
+
+\usepackage{tikz}
+
+
+
+\usepackage{physics}
+%\usepackage{amsthm}
+\usepackage{ntheorem}
+\theoremseparator{\;}
+
+
+
+\usepackage{blkarray}
+\usepackage{bm}
+\usepackage[colorlinks=true, linkcolor=black]{hyperref}
+
+%\usepackage{enumerate}
+
+
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries} 
+\theorembodyfont{\normalfont}
+
+
+\newtheorem{example}{\bf 例题}[chapter]
+\newenvironment{solution}{\noindent {\bf 解答：}}{}%{\hfill $\blacksquare$\par}
+
+
+\renewcommand{\proofname}{\bf 证明：}
+\newenvironment{proof}{{\noindent \bf 证明：}}{}%{\hfill $\square$\par}
+
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\EP}{\mathbb{E}^{\mathbb{P}}}
+\newcommand{\EQ}{\mathbb{E}^{\mathbb{Q}}}
+\newcommand{\dif}{\,{\rm d}}
+\newcommand{\Var}{{\rm Var}}
+\newcommand{\Cov}{{\rm Cov}}
+
+\newcommand{\x}{\times}
+
+ \usepackage{tcolorbox}
+ \tcbuselibrary{breakable}
+ \tcbuselibrary{most}
+
+\setcounter{tocdepth}{1}
+
+\setcounter{secnumdepth}{3}
+
+
+
+\ctexset {
+section = {
+	name = {第,节},
+	number = \chinese{section}},
+subsection = {
+	name = {\hspace{2em},、\hspace{-1em}},
+	number = \chinese{subsection}
+},
+subsubsection = {
+	name = {\hspace{2em}（,）\hspace{-1em}},
+	number = \chinese{subsubsection},
+}
+}
+
+
+\renewcommand{\contentsname}{目~~录}
+
+\usepackage{paralist}
+\let\itemize\compactitem
+
+\let\enumerate\compactenum
+\let\description\compactdesc
+
+
+\usepackage{titlesec}
+\titlespacing{\chapter}{0pt}{*1}{*1}
+\titlespacing{\section}{0pt}{*1}{*1}
+\titlespacing{\subsection}{0pt}{*1}{*1}
+
+\titlespacing{\subsubsection}{0pt}{*1}{*1}
+
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\usepackage{mathtools}
+
+\setlength{\abovecaptionskip}{0.cm}
+\setlength{\belowcaptionskip}{-0.cm}
+
+\usetikzlibrary{decorations.pathmorphing, patterns}
+\usetikzlibrary{calc, patterns, decorations.markings}
+\usetikzlibrary{positioning, snakes}
+
+
+
+\usepackage{yhmath}
+\newcommand{\ms}{\text{m}/\text{s}}
+\newcommand{\cms}{\text{cm}/\text{s}}
+\newcommand{\msq}{\text{m}/\text{s}^2}
+\newcommand{\cmsq}{\text{cm}/\text{s}^2}
+\newcommand{\kmh}{\text{km}/\text{h}}
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+\fontsize{11}{14}\selectfont
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\title{高级中学\\物理（甲种本）第一册\\教学参考书}
+
+
+
+\author{人民教育出版社物理室~~编}
+\date{1986年2月}
+
+\maketitle
+
+\tableofcontents
+
+
+\frontmatter
+
+\input{preface-ref.tex}
+
+\mainmatter
+
+\input{1ref.tex}
+
+\input{2ref.tex}
+\input{3ref.tex}
+\input{4ref.tex}
+\input{5ref.tex}
+\input{6ref.tex}
+\input{7ref.tex}
+\input{8ref.tex}
+\input{9ref.tex}
+
+
+
+
+%\input{app1.tex}
+\backmatter
+%\input{app2.tex}
+
+
+
+%\begin{appendix}
+%	\input{app3.tex}
+%\end{appendix}
+
+
+
+
+
+
+
+\end{document}
