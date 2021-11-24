@@ -122,9 +122,10 @@ subsubsection = {
 \newcommand{\cmsq}{\text{cm}/\text{s}^2}
 \newcommand{\kmh}{\text{km}/\text{h}}
 
+\usepackage{tkz-euclide}
 
-
-
+\usepackage{minitoc}
+\setcounter{minitocdepth}{3}  
 
 
 
@@ -156,6 +157,7 @@ subsubsection = {
 
 \maketitle
 
+\dominitoc
 \tableofcontents
 
 
@@ -165,11 +167,11 @@ subsubsection = {
 
 \mainmatter
 
-\input{1ref.tex}
+ \input{1ref.tex}
 
-\input{2ref.tex}
-\input{3ref.tex}
-\input{4ref.tex}
+ \input{2ref.tex}
+ \input{3ref.tex}
+ \input{4ref.tex}
 \input{5ref.tex}
 \input{6ref.tex}
 \input{7ref.tex}
@@ -177,17 +179,6 @@ subsubsection = {
 \input{9ref.tex}
 
 
-
-
-%\input{app1.tex}
-\backmatter
-%\input{app2.tex}
-
-
-
-%\begin{appendix}
-%	\input{app3.tex}
-%\end{appendix}
 
 
 
