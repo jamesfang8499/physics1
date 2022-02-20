@@ -577,17 +577,18 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 \subsubsection{共振}
 
 难道物体做受迫振动时它的固有频率对振动毫无影响吗？我们用图9.13所示的装置研究这个问题．
-\begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/9-13.png}
-    \caption{研究摆的共振}
-    \end{figure}
 
 在一根张紧的绳上挂几个摆，其中$A$、$B$、$G$的摆长相等．当$A$摆动的时候，$A$的振动通过张紧的绳给其余各摆施加周期性的策动力，其余各摆就做受迫振动．策动力的频率等于$A$摆的频率，决定于它的摆长．其他各摆的固有频率，也都决定于自己的摆长．可以发现，固有频率跟策动力频率相等的$B$、$G$，振幅最大，固有频率跟策动力频率相差最大的$D$、$E$，振幅最小．
 
-图9.14的曲线表示出了受迫振动的振幅$A$跟策动力频率$f$的关系：策动力的频率$f$等于振动物体的固有频率$f_{\text{固}}$时振幅最大；策动力的频率跟固有频率相差越大，振幅越小．
-\begin{figure}[htp]
-\centering
-	\begin{tikzpicture}[>=stealth, xscale=1.5,yscale=1.8]
+\begin{figure}[htp]\centering
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[scale=.8]{fig/9-13.png}
+    \caption{研究摆的共振}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\textwidth}
+    \centering
+\begin{tikzpicture}[>=stealth, xscale=1.5,yscale=1.8]
 	\draw [thick, ->] (.8,0)node[left]{$O$} -- (1.985,0) node[below]{$f_\text{固}$} -- (4.4,0) node[below]{$f$};
 	\draw [thick, ->] (.8,0) --(.8,3) node[left]{$A$};
 \node at (-0.25+.8,1.5)[rotate=90]{受迫振动的振幅};
@@ -595,7 +596,11 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 	\draw [very thick,domain=1:4,samples=200,variable=\x] plot (\x,{1.8/sqrt((4-\x*\x)*(4-\x*\x)+0.1*\x*\x)});
 	\end{tikzpicture}
     \caption{共振曲线}
-\end{figure}
+    \end{minipage}
+    \end{figure}
+
+
+图9.14的曲线表示出了受迫振动的振幅$A$跟策动力频率$f$的关系：策动力的频率$f$等于振动物体的固有频率$f_{\text{固}}$时振幅最大；策动力的频率跟固有频率相差越大，振幅越小．
 
 \textit{当策动力的频率跟物体的固有频率相等的时候，受迫振动的振幅最大，这种现象叫做共振．}
 
@@ -736,7 +741,7 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 把图9.18和9.19所示的波的图象跟图9.7所示的振动图象相比，会看到它们很相似．实际上，由简谐振动在媒质中传播所形成的波——简谐波，在任何时刻的图象都是正弦（或余弦）曲线，媒质的任何质点的振动图象也都是正弦（或余弦）曲线．例如，图9.20甲是在一条绳上传播的简谐波在某一时刻的图象，图9.20乙是这列波传播过程中绳上某一点的振动图象，这两条曲线变化规律相同，都按正弦（或余弦）规律变化，但是它们的物理意义不同．\textit{波的图象表示的是某一时刻各个质点的位移，振动图象表示的是某一质点在各个时刻的
 位移}．在波的图象中，相邻两个最大值之间的距离等于波长$\lambda$，在振动图象中，相邻两个最大值之间的间隔等于周期$T$．
 \begin{figure}[htp]\centering
-\begin{tikzpicture}[>=latex, xscale=.5]
+\begin{tikzpicture}[>=latex, xscale=.45]
     \draw [->](0,-2.5)--(0,2.5)node[right]{$y({\rm cm})$};
     \draw [->](0,0)--(20,0)node[right]{$x({\rm cm})$};
     \draw [very thick] plot[domain=0:6*3.1416, samples=1000] function{sin(x)} ;
@@ -767,7 +772,7 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 
 \end{tikzpicture}
 
-\begin{tikzpicture}[>=latex, xscale=.5]
+\begin{tikzpicture}[>=latex, xscale=.45]
     \draw [->](0,-2.5)--(0,2.5)node[right]{$y({\rm cm})$};
     \draw [->](0,0)--(20.8,0)node[right]{$t({\rm s})$};
     \draw [very thick] plot[domain=0:6*3.1416, samples=1000] function{cos(x)} ;

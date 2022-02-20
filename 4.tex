@@ -236,13 +236,13 @@ x&=v_0\sqrt{\frac{2y}{g}}\\
 \end{solution}
 
 
-\subsection*{练习二}
+\subsection*{练习三}
 
 
 下面各题都不考虑空气阻力．
 \begin{enumerate}
 \item 从一定高度水平抛出去的物体，它在空中飞行的时间是由什么决定的？抛射的水平距离又是由什么决定的？
-\item 从同一高度以不同的達度水平抛出两个质量不同的石子，下面的说法哪个对？
+\item 从同一高度以不同的速度水平抛出两个质量不同的石子，下面的说法哪个对？
 \begin{enumerate}
 	\item 速度大的先着地；
 	\item  质量大的先着地；
@@ -801,7 +801,21 @@ $F=0$，即外轨与轮缘不相互挤压．在修筑铁路的时候，正是根
 \item  一个35千克的重物，系在2.0米长的悬绳下端，不断摆动．重物通过最低点时的速率是3.0$\ms$，求这时绳对物体的拉力．
 \item  要使小球滑到圆形轨道顶端时不掉下来（图4.33），小球在轨道顶端的最小速率应是多大？已知圆形轨道的半径为$R$．
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/4-33.png}
+\centering
+\begin{tikzpicture}[>=latex]
+\fill[pattern= north east lines](-2.5,-.25) rectangle (2.5,0); 
+\draw(-2.5,0)--(2.5,0);
+\draw(0,1.5) circle (1.5);
+\draw[->](0,1.5)--node[fill=white]{$R$}+(-45:1.5);
+\tkzDefPoints{0/2.8/R1, 0/1.5/R0, -.919/0.584/R2}
+\draw(R1) circle(.2);
+\draw(R2) circle(.2);
+\draw[->](R1)--+(.5,0)node[below]{$v$};
+\draw[->](R2)--+(135:.5);
+
+\tkzDrawPoints(R1,R0,R2)
+
+\end{tikzpicture}
 \caption{}
 \end{figure}
 

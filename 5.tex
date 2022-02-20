@@ -201,7 +201,33 @@ M&= \frac{4\times 3.14^2\times (1.49\times 10^{11})^2}{6.67\times 10^{-11}\times
 但是物体的重量并不等于地球对物体的引力，这是因为地球在不停地自转，地球上的一切物体都随着地球自转而绕
 地轴做匀速圆周运动，这就需要向心力．这个向心力的方向是垂直指向地轴的，它的大小是$f=m\omega^2r$，式中的$r$是物体距地轴的距离，$\omega$是地球自转的角速度．这个向心力来自哪里？只能来自地球对物体的引力$F$，它是引力$F$的一个分力（图5.4）．\textit{引力$F$的另一个分力才是物体的重量$mg$}．
 \begin{figure}[htp]
-\centering\includegraphics[scale=1]{fig/5-4.png}
+\centering
+\begin{tikzpicture}[>=latex, scale=1]
+\tkzDefPoints{0/0/O, 1.414/1.414/S}
+\draw[very thick](O) circle (2);
+\draw[dashed] (O) ellipse[x radius=2, y radius=.5];
+\draw[dashed] (0,1.414) ellipse[x radius=1.414, y radius=.3];
+\draw[dashdotted](0,-2)--(0,2);
+\draw(O)--(2,0);
+\draw(0,1.414)--(S)--(O);
+\tkzDefPoints{0/1.414/S_1}
+\tkzDefPointWith[linear, K=.4](S,S_1) \tkzGetPoint{f}
+\tkzDefPointWith[linear, K=.7](S,O) \tkzGetPoint{F}
+\tkzDefPointsBy[translation = from f to S](F){F'}
+\tkzDrawSegments[very thick, ->](S,f S,F S,F')
+\tkzDrawSegments(F,f F,F')
+
+\tkzLabelPoints[left](O)
+\tkzLabelPoints[above left](f)
+\tkzLabelPoint[below](F'){$mg$}
+\tkzLabelPoints[below](F)
+\draw[thick](2,0) arc [start angle =0, end angle =-180, x radius=2, y radius=.5];
+\draw[thick](S) arc [start angle =0, end angle =-180, x radius=1.414, y radius=.3];
+
+
+\end{tikzpicture}
+
+
 \caption{物体的重量是地球对物体引力的一个分力}
 \end{figure}
 
