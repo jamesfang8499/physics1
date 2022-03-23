@@ -204,7 +204,50 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 使摆锤偏离平衡位置，然后放开，摆锤就在重力$G$和拉力$T$的作用下，沿着以平衡位置$O$为中点的一段圆弧左右振动．我们来分析摆锤运动到任意一点$P$时的受力情况（图9.3）．这时摆线与竖直方向的夹角是$\alpha$，重力$G$沿摆线方向的分力$F'$跟
 拉力$T$的合力，沿着摆线指向圆心（悬挂点），是使摆锤沿圆弧运动的向心力，它只改变摆锤运动的方向，不改变运动的快慢．因此，在研究摆锤沿圆弧运动的位置变化时，不需要考虑向心力，而只考虑重力沿圆弧切线方向的分力$F$，因为正是这个分力$F$是使摆锤振动的回复力．
 \begin{figure}[htp]\centering
-    \includegraphics[scale=.6]{fig/9-3.png}
+\begin{tikzpicture}[>=latex]
+\fill[pattern=north east lines](-1,0) rectangle (1,.25);
+\draw[thick](-1,0)--(1,0);
+\tkzDefPoints{0/0/O', 0/-5/O, 0/-6.5/G}
+\tkzDefPoint(-135:5){C}
+\tkzDefPoint(-65:5){P}
+\tkzDefPoint(-45:5){B}
+\tkzDrawSegments(O',B O',O O',C O',P)
+\tkzDefPointsBy[translation = from O to G](B,C,P){G1,G2,G3}
+\tkzDrawSegments[thick,->](O,G B,G1 C,G2 P,G3)
+\tkzDrawArc(O',C)(B)
+\foreach \x in {O,B,C,P}
+{
+    \draw(\x) circle(.2);
+}
+\foreach \x/\y in {B/G1,C/G2,P/G3}
+{
+    \tkzDefPointBy[projection = onto O'--\x](\y)
+    \tkzGetPoint{\x'}
+    \tkzDefPointsBy[translation= from \x' to \x](\y){\x''}
+    \tkzDrawSegments[thick, ->](\x,\x'' \x,\x')
+    \tkzDrawSegments[dashed](\y,\x' \y,\x'')
+}
+\tkzLabelPoint[below left](P''){$F$}
+
+\foreach \x/\y in {B/B', C/C', O/G, P/P'}
+{
+    \tkzDefPointBy[symmetry=center \x](\y)
+    \tkzGetPoint{\y'}
+    \tkzDrawSegments[thick, ->](\x,\y')
+}
+\tkzLabelPoints[left=4pt](C)
+\tkzLabelPoints[below left](O)
+\tkzLabelPoints[below right](P)
+\tkzLabelPoints[right=4pt](B)
+
+\tkzMarkAngles[mark=none, size=.9](O,O',P)
+\tkzLabelAngle[pos=1.1](O,O',P){$\alpha$}
+\tkzLabelSegment[right](O',P){$\ell$}
+\tkzLabelPoint[below](G3){$G$}
+\tkzLabelPoint[right](P'){$F'$}
+\tkzLabelPoint[right](P''){$T$}
+
+\end{tikzpicture}
     \caption{单摆运动时的受力分析}
     \end{figure}
     
