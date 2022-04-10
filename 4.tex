@@ -633,7 +633,48 @@ $\Delta v/\Delta t$的极限值
 
 把这两种情况联系起来考虑，可以帮助我们进一步认识物体做曲线运动的条件．
 \begin{figure}[htp]
-\centering\includegraphics[scale=1.1]{fig/4-23.png}
+\centering
+\begin{tikzpicture}[>=latex]
+	\begin{scope}
+		\tkzDefPoints{0/0/O, 0/3/a, -3/0/b, -1.93/-.31/F}
+		\tkzDefPoint(130:3){c}
+		\tkzDefPoint(130:1){F_n}
+		\tkzDrawArc[very thick](O,a)(b)
+		\tkzDefTangent[at=c](O)
+		\tkzGetPoint{h}
+		\tkzDrawLines[add=1.5 and 0](h,c)
+		\tkzDefPointBy[projection = onto c--h](F) \tkzGetPoint{F_1}
+		\tkzDefPointWith[linear, K=2.5](c,h)\tkzGetPoint{v}
+		\tkzDrawSegments[->](c,F_n c,F c,F_1 c,v)
+		\tkzDrawSegments[dashed](F,F_1 F,F_n)
+		\tkzLabelPoints[above left](F_1)
+		\tkzLabelPoints[below](F)
+		\tkzLabelPoints[right](F_n)
+		\tkzLabelPoints[above left](v)
+		\tkzMarkAngles[mark=none, size=.6](F_1,c,F)
+		\tkzLabelAngle[pos=.8](F_1,c,F){$\theta$}
+		\node at (-1.5,-1){甲};
+	\end{scope}
+	\begin{scope}[xshift=5cm]
+		\tkzDefPoints{0/0/O, 0/3/a, -3/0/b, -1.93/-.31/F}
+		\tkzDefPoint(130:3){c}
+		\tkzDefPoint(130:1){F_n}
+		\tkzDrawArc[very thick](O,a)(b)
+		\tkzDefTangent[at=c](O)
+		\tkzGetPoint{h}
+		\tkzDrawLines[add=0 and 2](h,c)
+		\tkzDefPointBy[projection = onto c--h](F) \tkzGetPoint{F_1}
+		\tkzDefPointWith[linear, K=3](h,c)\tkzGetPoint{v}
+		\tkzDrawSegments[->](c,F_n c,F c,F_1 c,v)
+		\tkzDrawSegments[dashed](F,F_1 F,F_n)
+		\tkzLabelPoints[above left](F_1)
+		\tkzLabelPoints[below](F)
+		\tkzLabelPoints[right](F_n,v)
+		\tkzMarkAngles[mark=none, size=.6](F,c,v)
+		\tkzLabelAngle[pos=.8](F,c,v){$\theta$}
+		\node at (-1.5,-1){乙};
+	\end{scope}
+\end{tikzpicture}
 \caption{}
 \end{figure}
 
@@ -741,18 +782,21 @@ $F=0$，即外轨与轮缘不相互挤压．在修筑铁路的时候，正是根
 离心脱水器是用来甩掉湿物体上的水的装置．洗衣机里的脱水筒，纺织广里使湿的棉纱、毛线或纺织品脱水的器械，就是这种装置．
 
 离心脱水器的主要部分是一个可以转动的筒，篱壁上有许多小孔（图4.29），湿物体就放在这个筒里，当筒转动得相当快的时候，水滴跟物体间的附着力小于水滴做圆周运动需要的向心力，于是水滴离开物体，逐步远离圆心，到达筒边，穿过小孔，因惯性面沿切线飞出，这样就把湿物体上的水甩掉了．
-\begin{figure}\centering
+
+\begin{figure}[htp]\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
 \includegraphics[scale=1.2]{fig/4-29.pdf}
 \caption{离心脱水器}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+\centering\includegraphics[scale=.9]{fig/4-30.png}
+\caption{离心转速计}
+	\end{minipage}
 \end{figure}
-
 
 离心转速计是用来测量机器转速的一种仪器，它的构造如图4.30所示．在转速计的转轴$OO'$上的$E$处安装着一根轻的金属棒，棒的两端有两个重球$m_1$和$m_2$，金属棒可以绕$B$点转动，弹簧$L_1$和$L_2$用来把金属棒拉向转轴．滑套$K$可以沿转轴上下移动，把转速计的转轴$OO'$跟机器的转轴连接在一起，当机器的轴转动时，$OO'$随着转动，重球$m_1$和$m_2$跟着
 做圆周运动，所受的向心力是由弹簧的拉力提供的．轴转动得越快，重球做圆周运动的半径就越大．滑套$K$在轴上就上升得越高，同时带动指针向左偏转，从刻度盘上就可以读出机器的转速．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.9]{fig/4-30.png}
-\caption{离心转速计}
-\end{figure}
 
 
 \subsection{一些有害的离心运动} 

@@ -626,12 +626,29 @@ Hz，1秒钟振动1次就是1赫．1秒钟振动$n$次就是$n$赫．
 \begin{figure}[htp]\centering
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-    \includegraphics[scale=.8]{fig/9-13.png}
+	\begin{tikzpicture}[>=latex, scale=1]
+		\tkzDefPoints{.5/3/B1, .9/3/B2, 1.1/3/C1, 1.5/3/C2, 1.7/3/D1, 2.1/3/D2, 2.3/3/A1, 2.7/3/A2, 2.9/3/E1, 3.3/3/E2, 3.5/3/F1, 3.9/3/F2, 4.1/3/G1, 4.5/3/G2}
+		\tkzDefPoints{.7/1/B, 1.3/.5/C, 1.9/.3/D, 2.5/1/A, 3.1/1.7/E, 3.7/1.5/F, 4.3/1.1/G}
+		\tkzDrawSegments(B,B1 B,B2 A,A1 A,A2 C,C1 C,C2 D,D1 D,D2 E,E1 E,E2 F,F1 F,F2 G,G1 G,G2)
+		\tkzLabelPoints[below=5pt](A,B,C,D,E,F,G)
+		\foreach \x in {B,C,D,E,F,G}
+		{
+			\draw[fill=white](\x) circle(4pt);
+		}
+		\draw[fill=gray](A) circle(4pt);
+		\draw(0+.2,3)--(5-.2,3);
+		\draw(0.1,3.2) rectangle (.2,-1);
+		\draw(5-.1,3.2) rectangle (5-.2,-1);
+		
+		\tkzDefPoints{-.1/-1/a, 5.1/-1/b, -.3/-1.1/c, 5.3/-1.1/d, -.3/-1.3/c', 5.3/-1.3/d'}
+		\tkzDrawPolygon(a,b,d,c)
+		\tkzDrawPolygon(d,c,c',d')
+	\end{tikzpicture}
     \caption{研究摆的共振}
     \end{minipage}
     \begin{minipage}[t]{0.48\textwidth}
     \centering
-\begin{tikzpicture}[>=stealth, xscale=1.5,yscale=1.8]
+\begin{tikzpicture}[>=stealth, scale=1.3]
 	\draw [thick, ->] (.8,0)node[left]{$O$} -- (1.985,0) node[below]{$f_\text{固}$} -- (4.4,0) node[below]{$f$};
 	\draw [thick, ->] (.8,0) --(.8,3) node[left]{$A$};
 \node at (-0.25+.8,1.5)[rotate=90]{受迫振动的振幅};

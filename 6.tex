@@ -78,14 +78,29 @@
 \subsection{力矩} 
 
 我们从经验知道，力可以使物体转动．用力推门，门就绕门轴转动．用扳手拧螺帽，螺帽就绕螺杆转动．力越大，力使物体的转动作用就越大．但是力对物体的转动作用不仅跟力的大小有关系，还跟力和转动轴之间的距离有关系．在离转动轴不远的地方推门，用比较大的力才能把门推开；在离转动轴较远的地方推门，用比较小的力就能把门推开．用手直接拧螺帽，不能把它拧紧；用扳手来拧，就容易拧紧了．可见，力越大，力和转动轴之间的距离越大，力对物体的转动作用就越大．
+\begin{figure}[htp]
+	\centering\begin{tikzpicture}[>=latex]
+		\tkzDefPoints{-2.5/0/A, 2/0/B, 0/0/O, -4/-1/F_1, 1.1/-1.2/F_2}
+		\tkzDrawSegments[ultra thick](A,B)
+		\tkzDrawSegments[->](A,F_1 B,F_2)
+		\tkzLabelPoints[above](O,B)
+		\tkzLabelPoints[left](A)
+		\tkzLabelPoints[right](F_1,F_2)
+		\tkzDefPointBy[projection= onto A--F_1](O)\tkzGetPoint{A'}
+		\tkzDefPointBy[projection= onto B--F_2](O)\tkzGetPoint{B'}
+		\tkzDrawSegments[dashed](A,A' A',O O,B')
+		\tkzLabelSegment[left](O,A'){$L_1$}
+		\tkzLabelSegment[below](O,B'){$L_2$}
+		\draw(O)--(-.13,-.2)--(.13,-.2)--(O);
+		
+	\end{tikzpicture}
+	\caption{作用在杠杆上的力和它们的力臂}
+\end{figure}
 
 力和转动轴之间的距离，也就是从转动轴到力的作用线的垂直距离，叫做\textbf{力臂}，图6.7表示有两个力$F_1$和$F_2$作用
 在杠杆上，杠杆的转动轴垂直于纸面，$L_1$是力$F_1$的力臂，$L_2$是力$F_2$的力臂，力和力臂的乘积叫做力对转动轴的\textbf{力矩}，如果用$F$表示力，用$L$表示力臂，用$M$表示力矩，那么
 \[M=FL\]
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-7.png}
-\caption{作用在杠杆上的力和它们的力臂}
-\end{figure}
+
 
 力越大，力臂越大，力矩就越大，力对物体的转动作用也越大．力对物体的转动作用决定于力矩的大小，力等于零，因而力矩等于零的时候，当然不会对物体有转动作用，力不等于零，力臂等于零，因而力矩等于零的时候，力对物体也不会产生转动作用．
 
@@ -101,7 +116,7 @@
 
 现在我们用实验来验证这个结论．
 \begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-8.png}
+\centering\includegraphics[scale=1]{fig/6-8.png}
 \caption{}
 \end{figure}
 
@@ -121,15 +136,21 @@
 \begin{enumerate}
     \item 当我们开关门窗时，如果力的作用线通过转轴，无论多大的力也不能把门窗打开或关上，为什么？
     \item 如图6.9所示，如在自行车脚踏板上的向下的力是15牛，求这个力的力矩．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-9.png}
-\caption{}
-\end{figure}
-    \item 图6-10是汽车制动器的路板的示意图．$O$是转动轴，$B$端连接制动器．如果司机踏紧踏板的力$F$为20牛，制动器的阻力$F'$是多大？
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-10.png}
-\caption{}
-\end{figure}
+    
+   \begin{figure}[htp]\centering
+   	\begin{minipage}[t]{0.48\textwidth}
+   		\centering
+   		\includegraphics[scale=1]{fig/6-9.png}
+   		\caption{}
+   	\end{minipage}
+   	\begin{minipage}[t]{0.48\textwidth}
+   		\centering
+   		\includegraphics[scale=1]{fig/6-10.png}
+   		\caption{}
+   	\end{minipage}
+   \end{figure}
+
+    \item 图6.10是汽车制动器的路板的示意图．$O$是转动轴，$B$端连接制动器．如果司机踏紧踏板的力$F$为20牛，制动器的阻力$F'$是多大？
     \item 试根据有固定转动轴的物体的平衡条件来证明初中学过的杠杆的平衡条件：如果作用在杠杆上的两个力使杠杆向相反方向转动，并且这两个力的大小跟它们的力臂长度成反比，杠杆就平衡．
     \item 一个有固定转动轴的物体受到四个力的作用，其中使物体向顺时针方向转动的两个力是5牛和3牛，使物体向反时针方向转动的两个力是2牛和6牛．这四个力的力臂依次是0.50米、0.25米、0.05米、0.20米，在这四个力的作用下，物体能否平衡？为了使物体平衡，应该把一个1牛的力加在物体上离转动轴多远的地方？这个力的力矩是正的还是负的？
 \end{enumerate}
@@ -148,16 +169,20 @@
 \end{figure}
 
 两个大小相等方向相反而在同一直线上的力，叫做\textbf{力偶}．\textit{力偶的作用是使物体只发生转动}．在实际上常常利用力偶来使物体转动．用两手转动汽车的方向盘（图6.13），用两手转动套筒（图6.14），拿钥匙开锁，用螺丝刀拧螺丝钉，都是常见的例子．
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-13.png}
-\caption{两手对方向盘产生一个力偶}
-\end{figure}
-\begin{figure}[htp]
-\centering\includegraphics[scale=.8]{fig/6-14.png}
+\begin{figure}[htp]\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=.8]{fig/6-13.png}
+		\caption{两手对方向盘产生一个力偶}
+	\end{minipage}
+	\begin{minipage}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[scale=.8]{fig/6-14.png}
 \caption{用套筒拧螺母，两手对套筒产生一个力偶}
+	\end{minipage}
 \end{figure}
 
-对有固定转动轴的物体来说，用一个力可以使它转动，用两个力组成力偶也可以使它转动，例如图6-14中不用两只手扳，用一只手扳，也可以使套简转动，但这两种情况还是不同的，从图6-11所示的实验知道，一个力作用在物体上，可以同时产生转动作用和平动作用．一个力作用在有固定转动轴的物体上，物体所以没有发生平动，是因为物体受到固定转动轴的限制，这时转动物体要受到转动轴的压力，转动轴同时也要受到转动物体的正力，这种压力往往是不利的，例如用一只手扳套筒，就容易磨损螺纹，用力偶来使物体转动，因为
+对有固定转动轴的物体来说，用一个力可以使它转动，用两个力组成力偶也可以使它转动，例如图6.14中不用两只手扳，用一只手扳，也可以使套简转动，但这两种情况还是不同的，从图6.11所示的实验知道，一个力作用在物体上，可以同时产生转动作用和平动作用．一个力作用在有固定转动轴的物体上，物体所以没有发生平动，是因为物体受到固定转动轴的限制，这时转动物体要受到转动轴的压力，转动轴同时也要受到转动物体的正力，这种压力往往是不利的，例如用一只手扳套筒，就容易磨损螺纹，用力偶来使物体转动，因为
 力偶只产生转动作用，在转动物体和转动轴之间就不会产生压力、因此，如果希望只产生转动作用，那就应该用力偶来使物体转动．
 \begin{figure}[htp]
 \centering
